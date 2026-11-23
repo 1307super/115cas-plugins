@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "name": "115CAS 官方插件仓库",
+  "name": "官方插件仓库",
   "description": "115CAS 官方维护的内置插件与常用规则插件",
   "homepage": "https://github.com/1307super/115cas-plugins",
-  "updatedAt": "2026-11-23T06:06:41Z",
+  "updatedAt": "2026-11-23T06:13:37Z",
   "plugins": [
     {
       "id": "builtin-debug-observer",
