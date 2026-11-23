@@ -1,0 +1,46 @@
+name: Build Plugin Registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'plugins/**'
+      - 'repo.json'
+      - 'scripts/build-registry.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-registry
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build registry.json
+        run: node scripts/build-registry.mjs
+
+      - name: Commit & Push registry.json if changed
+        run: |
+          if git diff --quiet registry.json; then
+            echo "registry.json 无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry.json
+          git commit -m "chore: update registry.json [skip ci]"
+          git push

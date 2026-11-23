@@ -1,0 +1,31 @@
+{
+  "name": "Casby 官方插件仓库",
+  "description": "115CAS / Casby 官方维护的内置插件与常用规则插件",
+  "homepage": "https://github.com/1307super/115cas-plugins",
+  "overrides": {
+    "builtin-filter-extras": {
+      "author": "官方",
+      "category": "过滤",
+      "tags": ["过滤", "官方", "content.filter"],
+      "changelog": "初始官方远程版本（支持设置项配置）"
+    },
+    "builtin-filter-pardon": {
+      "author": "官方",
+      "category": "过滤",
+      "tags": ["过滤", "官方", "content.filter"],
+      "changelog": "初始官方远程版本（支持设置项配置）"
+    },
+    "builtin-score-preference": {
+      "author": "官方",
+      "category": "评分",
+      "tags": ["评分", "官方", "resource.score"],
+      "changelog": "初始官方远程版本"
+    },
+    "builtin-debug-observer": {
+      "author": "官方",
+      "category": "调试",
+      "tags": ["调试", "官方"],
+      "changelog": "初始官方远程版本"
+    }
+  }
+}

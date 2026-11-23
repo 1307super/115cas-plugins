@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "Casby 官方插件仓库",
+  "description": "115CAS / Casby 官方维护的内置插件与常用规则插件",
+  "homepage": "https://github.com/1307super/115cas-plugins",
+  "updatedAt": "2026-11-23T04:39:08Z",
+  "plugins": [
+    {
+      "id": "builtin-debug-observer",
+      "name": "builtin-debug-observer",
+      "title": "调试观察器（只看不改）",
+      "version": "1.1.0",
+      "author": "官方",
+      "description": "打印每个接入点收到的 ctx.input 和 ctx.result，帮助你了解数据结构、排查规则。不修改任何结果。",
+      "category": "调试",
+      "tags": [
+        "调试",
+        "官方"
+      ],
+      "changelog": "初始官方远程版本",
+      "url": "./plugins/builtin-debug-observer.js",
+      "sha256": "fbae3bb8a2f4c0611e36d6acd04b0112717a20fc84e26878d0fdff88c4a5ded9"
+    },
+    {
+      "id": "builtin-filter-extras",
+      "name": "builtin-filter-extras",
+      "title": "屏蔽花絮 / 预告 / 样片",
+      "version": "1.2.0",
+      "author": "官方",
+      "description": "拦截标题或文件名中带「预告、花絮、彩蛋、样片、sample、trailer」等字样的资源；文件级再拦截体积过小的视频（多半是样片）。",
+      "category": "过滤",
+      "tags": [
+        "过滤",
+        "官方",
+        "content.filter"
+      ],
+      "changelog": "初始官方远程版本（支持设置项配置）",
+      "url": "./plugins/builtin-filter-extras.js",
+      "sha256": "eaf31bac30691cae1e0138148da2f010cca04a86cd2842392a98bed1d359d37d"
+    },
+    {
+      "id": "builtin-filter-pardon",
+      "name": "builtin-filter-pardon",
+      "title": "黑名单特赦",
+      "version": "1.2.0",
+      "author": "官方",
+      "description": "被内置黑名单拦截、但文本命中特赦关键词（默认：内封中字/中英双字）的资源会被放行；可限定只对某些分类生效。",
+      "category": "过滤",
+      "tags": [
+        "过滤",
+        "官方",
+        "content.filter"
+      ],
+      "changelog": "初始官方远程版本（支持设置项配置）",
+      "url": "./plugins/builtin-filter-pardon.js",
+      "sha256": "9161bad63b25469de2fef2b0aad276a85d40f90bc4ca975bb9d7e8b64fb00abe"
+    },
+    {
+      "id": "builtin-score-preference",
+      "name": "builtin-score-preference",
+      "title": "资源偏好加分",
+      "version": "1.2.0",
+      "author": "官方",
+      "description": "按关键词给资源加减分（默认：杜比视界、HDR、中字加分；枪版、过大的文件减分）。",
+      "category": "评分",
+      "tags": [
+        "评分",
+        "官方",
+        "resource.score"
+      ],
+      "changelog": "初始官方远程版本",
+      "url": "./plugins/builtin-score-preference.js",
+      "sha256": "e81f556f384a302abcdc597c9814e1a78235279bfe89d4aae3e6275b58f5c807"
+    }
+  ]
+}
