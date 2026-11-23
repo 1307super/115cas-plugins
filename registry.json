@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "name": "Casby 官方插件仓库",
-  "description": "115CAS / Casby 官方维护的内置插件与常用规则插件",
+  "name": "115CAS 官方插件仓库",
+  "description": "115CAS 官方维护的内置插件与常用规则插件",
   "homepage": "https://github.com/1307super/115cas-plugins",
-  "updatedAt": "2026-11-23T04:39:08Z",
+  "updatedAt": "2026-11-23T06:06:41Z",
   "plugins": [
     {
       "id": "builtin-debug-observer",
@@ -18,6 +18,7 @@
         "官方"
       ],
       "changelog": "初始官方远程版本",
+      "homepage": "https://github.com/1307super/115cas-plugins/blob/main/plugins/builtin-debug-observer.js",
       "url": "./plugins/builtin-debug-observer.js",
       "sha256": "fbae3bb8a2f4c0611e36d6acd04b0112717a20fc84e26878d0fdff88c4a5ded9"
     },
@@ -35,6 +36,7 @@
         "content.filter"
       ],
       "changelog": "初始官方远程版本（支持设置项配置）",
+      "homepage": "https://github.com/1307super/115cas-plugins/blob/main/plugins/builtin-filter-extras.js",
       "url": "./plugins/builtin-filter-extras.js",
       "sha256": "eaf31bac30691cae1e0138148da2f010cca04a86cd2842392a98bed1d359d37d"
     },
@@ -52,6 +54,7 @@
         "content.filter"
       ],
       "changelog": "初始官方远程版本（支持设置项配置）",
+      "homepage": "https://github.com/1307super/115cas-plugins/blob/main/plugins/builtin-filter-pardon.js",
       "url": "./plugins/builtin-filter-pardon.js",
       "sha256": "9161bad63b25469de2fef2b0aad276a85d40f90bc4ca975bb9d7e8b64fb00abe"
     },
@@ -69,6 +72,7 @@
         "resource.score"
       ],
       "changelog": "初始官方远程版本",
+      "homepage": "https://github.com/1307super/115cas-plugins/blob/main/plugins/builtin-score-preference.js",
       "url": "./plugins/builtin-score-preference.js",
       "sha256": "e81f556f384a302abcdc597c9814e1a78235279bfe89d4aae3e6275b58f5c807"
     }

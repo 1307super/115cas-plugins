@@ -1,6 +1,6 @@
-# 115CAS / Casby 官方插件仓库
+# 115CAS 官方插件仓库
 
-本仓库是 115CAS（Casby）内置官方插件源，客户端会自动从以下地址拉取清单：
+本仓库是 115CAS 内置官方插件源，程序会自动从以下地址拉取清单：
 
 ```text
 https://raw.githubusercontent.com/1307super/115cas-plugins/main/registry.json

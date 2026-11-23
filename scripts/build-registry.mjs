@@ -118,9 +118,9 @@ function evalObjectLiteral(literal) {
 }
 
 /**
- * 从 Casby 原生插件源码（export const meta = {...}）提取元信息。
+ * 从 115CAS 原生插件源码（export const meta = {...}）提取元信息。
  */
-function extractCasbyMeta(src) {
+function extractPluginMeta(src) {
   const re = /\bexport\s+(?:const|let|var)\s+meta\s*(?::[^=]+)?=/
   const m = re.exec(src)
   if (!m) return null
@@ -205,7 +205,7 @@ function main() {
     let srcText = ''
     if (ext === '.js' || ext === '.mjs' || ext === '.ts') {
       srcText = fs.readFileSync(filePath, 'utf8')
-      parsed = extractCasbyMeta(srcText) || extractForwardMeta(srcText) || {}
+      parsed = extractPluginMeta(srcText) || extractForwardMeta(srcText) || {}
     }
 
     const name = cleanString(sidecar.name || parsed.name)
@@ -234,6 +234,16 @@ function main() {
           ? parsed.tags
           : inferTagsFromSource(srcText)
 
+    const repoHomepage = cleanString(repoCfg.homepage).replace(/\/+$/, '')
+    let homepage = cleanString(ov.homepage || sidecar.homepage || parsed.homepage)
+    if (!homepage && repoHomepage) {
+      if (/^https?:\/\/github\.com\/[^/]+\/[^/]+$/i.test(repoHomepage)) {
+        homepage = `${repoHomepage}/blob/main/${relPosix.replace(/^\.\//, '')}`
+      } else {
+        homepage = repoHomepage
+      }
+    }
+
     const item = {
       id,
       name,
@@ -244,6 +254,7 @@ function main() {
       category: cleanString(ov.category || sidecar.category || parsed.category || prev.category),
       tags,
       changelog: cleanString(ov.changelog || sidecar.changelog || parsed.changelog || (prev.version === version ? prev.changelog : '')),
+      homepage,
       url: relPosix,
       sha256,
     }
@@ -252,7 +263,7 @@ function main() {
     if (minHost) item.minHostVersion = minHost
 
     // 清理空的可选字段，让生成的 JSON 简洁易读。
-    for (const k of ['author', 'description', 'category', 'changelog']) {
+    for (const k of ['author', 'description', 'category', 'changelog', 'homepage']) {
       if (!item[k]) delete item[k]
     }
     if (!item.tags.length) delete item.tags
@@ -264,7 +275,7 @@ function main() {
 
   const nextCore = {
     schemaVersion: 1,
-    name: cleanString(repoCfg.name) || 'Casby 插件仓库',
+    name: cleanString(repoCfg.name) || '115CAS 插件仓库',
     description: cleanString(repoCfg.description),
     homepage: cleanString(repoCfg.homepage),
     plugins,
